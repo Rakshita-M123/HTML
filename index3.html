@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+       
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <label for="password">password:</label>
+        <input type="text" id="password" name="password" required><br><br>
+
+        <label for="confirm password">confirm password:</label>
+        <input type="text" id="confirm password" name="confirm password" required><br><br>
+        
+        <button type="button" onclick="validateForm()">Sign Up</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const message = document.getElementById("message");
+            
+            if (firstName.length < 5) {
+                message.textContent = "First name must contain at least 5 characters.";
+                message.style.color = "red";
+            } else if (lastName.length < 5) {
+                message.textContent = "Last name must contain at least 5 characters.";
+                message.style.color = "red";
+            } else if (email.length <3) {
+                message.textContent = "email must contain at least 3 characters.";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Sign-up successful!";
+                message.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
